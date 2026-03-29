@@ -217,11 +217,11 @@ function MarkdownContent({ content }: { content: string }) {
                     <div className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(0,212,255,0.2)" }} />
                     <div className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(0,212,255,0.1)" }} />
                   </div>
-                  <span style={{ color: "rgba(0,212,255,0.4)", fontSize: "11px", fontFamily: "'JetBrains Mono', monospace" }}>{match[1]}</span>
+                  <span style={{ color: "rgba(0,212,255,0.4)", fontSize: "11px", fontFamily: "'JetBrains Mono', monospace" }}>{match?.[1]}</span>
                 </div>
                 <CopyBtn text={raw.replace(/\n$/, "")} size="xs" />
               </div>
-              <SyntaxHighlighter style={vscDarkPlus} language={match[1]} PreTag="div"
+              <SyntaxHighlighter style={vscDarkPlus} language={match?.[1] ?? "text"} PreTag="div"
                 customStyle={{ margin: 0, padding: "16px", background: "transparent", fontSize: "0.8rem", lineHeight: "1.65" }}>
                 {raw.replace(/\n$/, "")}
               </SyntaxHighlighter>
