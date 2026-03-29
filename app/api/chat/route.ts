@@ -6,7 +6,9 @@ import fs from "fs/promises";
 import path from "path";
 import crypto from "crypto";
 
-const MEMORY_FILE = path.join(process.cwd(), "agent_memory.json");
+const MEMORY_FILE = process.env.VERCEL
+  ? "/tmp/agent_memory.json"
+  : path.join(process.cwd(), "agent_memory.json");
 
 export const runtime = "nodejs";
 
